@@ -10,11 +10,10 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
     $.ajax({
-        url:"app/index.php",
+        url:"http://localhost/proxy/sunq/moningNight/app/",
         type:"post",
         success:function (data) {
-            console.log(data);
-//            document.getElementsByClassName("texteara")[0].append("陈宫");
+            document.getElementsByClassName("texteara")[0].append(data);
         }
     });
 </script>
