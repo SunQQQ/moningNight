@@ -1,0 +1,8 @@
+.timeInput{
+    display: flex;
+    vertical-align: middle;
+    padding: 10px 20px;
+}
+.timeInput selector{
+    flex: 1;
+}

@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+.topPic{
+    /*height: 20%;*/
+}
+.topPic img{
+    width: 100%;
+    height: 100%;
+}
+.note{
+    width: 80%;
+    margin: 10% 10% 0;
+    text-align: center;
+    background-color: #fdc510;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #764e2a;
+}

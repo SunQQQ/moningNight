@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <title>早睡早起</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <link href="css/index.css" >
+    <link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="note">记一笔</div>
+<div class="topPic">
+    <img src="pic/bala.jpg">
+</div>
+<a href="add.html"><div class="note">记一笔</div></a>
 <div class="texteara">早睡早起</div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
     $.ajax({
-        url:"http://localhost/proxy/sunq/moningNight/app/",
+        url:"http://192.168.10.205/proxy/sunq/moningNight/app/",
         type:"post",
         success:function (data) {
             document.getElementsByClassName("texteara")[0].append(data);
         }
     });
+    document.getElementsByClassName("note")[0].onclick = function () {
+
+    }
 </script>
 </body>
 </html>
