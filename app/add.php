@@ -1,25 +1,19 @@
 <?php
-$shuoshuoTxt = $_POST['time'];
+
+$time = $_POST['time'];
 $moningOrNight = $_POST['moningOrNight'];
-$pic = $_FILES["uploadFile"]["tmp_name"];
-//$pic = $_FILES["uploadFile"];
-echo $pic;
+$name = "孙权";
 
-move_uploaded_file($pic,"pic/shuoshuo/".$_FILES["uploadFile"]["name"]);
-if($_FILES["uploadFile"]["name"]){
-    $picUrl = "app/pic/shuoshuo/".$_FILES["uploadFile"]["name"];
-}
-
-$connent = new mysqli("localhost","root","","kongjian");
+$connent = new mysqli("localhost","root","","moningnight");
 if($connent->connect_error){
     die("连接失败：".$connent->connect_error);
 }else{
 }
 
-$insertdata = "insert into shuoshuo(context,pic) values('".$shuoshuoTxt."','".$picUrl."')";
+$insertdata = "insert into time(name,moningnight,time) values('".$name."','".$time."','".$moningOrNight."')";
 
 if($connent->query($insertdata)==true){
-//    echo "<script>alert('定制成功，我们的老师将会及时与您联系')</script>";
+    echo "<script>alert('定制成功，我们的老师将会及时与您联系')</script>";
 }else{
     echo "Error insert data: " . $connent->error;
 }
