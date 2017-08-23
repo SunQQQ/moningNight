@@ -8,11 +8,8 @@ document.getElementsByClassName("right")[0].onclick = function () {
     var millsTime = new Date(time);
     var formatTime = SQ.FormatData(millsTime);
 
-    console.log(time);
-    console.log(moningOrNight);
-
     $.ajax({
-        url:"http://192.168.10.224/proxy/sunq/moningNight/app/add.php",
+        url:"http://localhost/proxy/sunq/moningNight/app/add.php",
         type:"post",
         data:{
             time:formatTime,

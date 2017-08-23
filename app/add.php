@@ -1,7 +1,6 @@
 <?php
-
-$time = $_POST['time'];
-$moningOrNight = $_POST['moningOrNight'];
+$time = $_POST["time"];
+$moningOrNight = $_POST["moningOrNight"];
 $name = "孙权";
 
 $connent = new mysqli("localhost","root","","moningnight");
