@@ -22,3 +22,30 @@ a{
     font-weight: bold;
     color: #764e2a;
 }
+
+.list{
+    margin-top: 1rem;
+}
+.list .item{
+    padding: 5px 0;
+    margin: 0 5%;
+    display: flex;
+    align-items:center;
+}
+.list .item .left{
+    flex: 1;
+}
+.list .item .left .top{
+    font-size: 1.1rem;
+    color: #373737;
+}
+.list .item .left .down{
+    font-size: 0.8rem;
+    color: #b5b6b8;
+}
+.list .item .right{
+    color: #fb6154;
+    flex: 1;
+    text-align: right;
+    font-size: 1.2rem;
+}

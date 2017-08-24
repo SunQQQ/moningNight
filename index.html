@@ -7,24 +7,45 @@
     <link href="css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="topPic">
-    <img src="pic/bala.jpg">
+<div class="content">
+    <div class="topPic">
+        <img src="pic/bala.jpg">
+    </div>
+    <a href="add.html"><div class="note">记一笔</div></a>
+    <div class="list" id="list">
+        <div class="item" v-for="item in jsondata">
+            <div class="left">
+                <div class="top">{{item.time}}</div>
+                <div class="down">{{item.moningnight}}</div>
+            </div>
+            <div class="right">{{item.moningnight}}</div>
+        </div>
+    </div>
 </div>
-<a href="add.html"><div class="note">记一笔</div></a>
-<div class="texteara">早睡早起</div>
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/vue.js"></script>
 <script>
+    var indexData = {};
+
     $.ajax({
         url:"http://localhost/proxy/sunq/moningNight/app/",
         type:"post",
         data:{
             name:"孙权",
         },
-        success:function (data) {
-            console.log("哦也");
-            console.log(data);
+        success:function (ret) {
+            indexData = JSON.parse(ret);
+
+            console.log(typeof indexData);
+
+            var vm = new Vue({
+                el: '#list',
+                data: indexData
+            });
         }
     });
+
+
 </script>
 </body>
 </html>

@@ -7,22 +7,23 @@ if($connent->connect_error){
 }else{
 }
 
-//$insertdata = "select * from time where name='".$name."'";
-$sql = "select * from time where name='孙权'";
+$sql = "select * from time where name='孙权' ORDER BY moningnight DESC";
 $result = $connent->query($sql);
-//print_r($result->fetch_row());
 
-$jarr = array();
+$dataArray = array();
 while ($rows=mysqli_fetch_array($result,MYSQL_ASSOC)){
     $count=count($rows);//不能在循环语句中，由于每次删除 row数组长度都减小
     for($i=0;$i<$count;$i++){
         unset($rows[$i]);//删除冗余数据
     }
-    array_push($jarr,$rows);
+    array_push($dataArray,$rows);
 }
-echo json_encode($jarr,JSON_UNESCAPED_UNICODE);
-//print_r($jarr);//查看数组
+$json = [
+    "code" => "200",
+    "jsondata" => $dataArray
+];
+echo json_encode($json,JSON_UNESCAPED_UNICODE);
 
-//$result->free();
+$result->free();
 mysqli_close($connent);
 ?>
