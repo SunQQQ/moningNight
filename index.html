@@ -15,8 +15,8 @@
     <div class="list" id="list">
         <div class="item" v-for="item in jsondata">
             <div class="left">
-                <div class="top">{{item.time}}</div>
-                <div class="down">{{item.moningnight}}</div>
+                <div class="top">{{item.time_hour}}</div>
+                <div class="down">{{item.time_day}}</div>
             </div>
             <div class="right">{{item.moningnight}}</div>
         </div>
@@ -36,8 +36,11 @@
         success:function (ret) {
             indexData = JSON.parse(ret);
 
-            console.log(typeof indexData);
-
+            for(var i=0;i<indexData.jsondata.length;i++){
+                indexData.jsondata[i].time_day = indexData.jsondata[i].time.substr(0,9);
+                indexData.jsondata[i].time_hour = indexData.jsondata[i].time.substr(10,4);
+            }
+            console.log(indexData);
             var vm = new Vue({
                 el: '#list',
                 data: indexData

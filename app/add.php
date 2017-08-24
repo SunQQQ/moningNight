@@ -9,7 +9,7 @@ if($connent->connect_error){
 }else{
 }
 
-$insertdata = "insert into time(name,moningnight,time) values('".$name."','".$time."','".$moningOrNight."')";
+$insertdata = "insert into time(name,time,moningnight) values('".$name."','".$time."','".$moningOrNight."')";
 
 if($connent->query($insertdata)==true){
     echo "<script>alert('定制成功，我们的老师将会及时与您联系')</script>";

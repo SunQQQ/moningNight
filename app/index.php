@@ -7,7 +7,7 @@ if($connent->connect_error){
 }else{
 }
 
-$sql = "select * from time where name='孙权' ORDER BY moningnight DESC";
+$sql = "select * from time where name='孙权' ORDER BY TIME DESC";
 $result = $connent->query($sql);
 
 $dataArray = array();
