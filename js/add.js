@@ -16,7 +16,10 @@ document.getElementsByClassName("right")[0].onclick = function () {
             moningOrNight:moningOrNight
         },
         success:function (data) {
-//            document.getElementsByClassName("texteara")[0].append(data);
+           document.getElementsByClassName("loading")[0].style.display = "block";
+           setTimeout(function () {
+               location.href = "index.html";
+           },1000);
         }
     });
 }

@@ -6,3 +6,35 @@
 .timeInput selector{
     flex: 1;
 }
+
+.loading{
+    width: 35%;
+    position: fixed;
+    background: rgba(17, 17, 17, 0.7);
+    border-radius: 5px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    display: none;
+}
+.loading .text{
+    margin-top: 10px;
+}
+
+
+@font-face {font-family: "iconfont";
+    src: url('iconfont.eot?t=1503554432401'); /* IE9*/
+    url('iconfont.ttf?t=1503554432401') format('truetype');/* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:30px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-right:before { content: "\e603"; }
