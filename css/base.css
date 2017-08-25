@@ -1,3 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: #7d8291;
+}
+
 .moning-input{
     flex: 1;
     border: 0;
@@ -36,7 +45,6 @@
     width: 100%;
     height: 100%;
 }
-
 /*弹框*/
 .loading{
     width: 35%;
