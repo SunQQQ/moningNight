@@ -11,6 +11,13 @@ var SQ = {
             minute = timer.getMinutes(),
             second = timer.getSeconds();
 
+        if(hour<10){
+            hour = '0'+hour;
+        }
+        if(minute<10){
+            minute = '0'+hour;
+        }
+
         return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
     }
 };

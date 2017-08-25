@@ -1,18 +1,31 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1503554432401'); /* IE9*/
-  src: url('iconfont.eot?t=1503554432401#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.ttf?t=1503554432401') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  src: url('iconfont.eot?t=1503634059097'); /* IE9*/
+  src: url('iconfont.eot?t=1503634059097#iefix') format('embedded-opentype'),
+
+  url('iconfont.woff?t=1503634059097') format('woff'),
+  url('iconfont.ttf?t=1503634059097') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
 }
 
 .iconfont {
-  margin-top: 10px;
+  margin-top: 15px;
   font-family:"iconfont" !important;
   font-size:40px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.downMenu{
+  font-size:25px;
+}
 
 .icon-right:before { content: "\e603"; }
+
+.icon-baobiao:before { content: "\e618"; }
+
+.icon-xiguan:before { content: "\e610"; }
+
+.icon-pengyouquan:before { content: "\e501"; }
+
+
 

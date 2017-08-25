@@ -2,6 +2,7 @@
  * Created by OnlyMid on 2017/8/22.
  */
 document.getElementsByClassName("right")[0].onclick = function () {
+    document.getElementsByClassName("working")[0].style.display = "block";
     var time = document.getElementsByClassName("moning-input")[0].value;
     var moningOrNight = document.getElementsByClassName("moningSelect")[0].value;
 
@@ -16,6 +17,7 @@ document.getElementsByClassName("right")[0].onclick = function () {
             moningOrNight:moningOrNight
         },
         success:function (data) {
+           document.getElementsByClassName("working")[0].style.display = "none";
            document.getElementsByClassName("loading")[0].style.display = "block";
            setTimeout(function () {
                location.href = "index.html";

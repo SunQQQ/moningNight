@@ -36,3 +36,50 @@
     width: 100%;
     height: 100%;
 }
+
+/*弹框*/
+.loading{
+    width: 35%;
+    position: fixed;
+    background: rgba(17, 17, 17, 0.7);
+    border-radius: 5px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    display: none;
+}
+.loading .text{
+    margin-top: 10px;
+}
+
+.working{
+    display:none;
+}
+
+.menu{
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display:-webkit-flex;
+    display: flex;
+    border-top: 1px solid #d5d5d5;
+    background-color: white;
+    color: #7d8291;
+    font-size: 0.7rem;
+    padding: 5px 0 3px;
+}
+.menu .item{
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.menu .selected{
+    color: #47bafe;
+}
+.menu_hold{
+    height: 60px;
+}
