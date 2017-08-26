@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1503674018277'); /* IE9*/
-  src: url('iconfont.eot?t=1503674018277#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1503674018277') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1503674018277') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1503674018277#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1503737913733'); /* IE9*/
+  src: url('iconfont.eot?t=1503737913733#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1503737913733') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1503737913733') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1503737913733#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -27,4 +27,5 @@
 
 .icon-quanzi:before { content: "\e626"; }
 
+.icon-camara:before { content: "\e60e"; }
 
