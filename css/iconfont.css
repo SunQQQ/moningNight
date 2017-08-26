@@ -1,23 +1,23 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1503634059097'); /* IE9*/
-  src: url('iconfont.eot?t=1503634059097#iefix') format('embedded-opentype'),
-
-  url('iconfont.woff?t=1503634059097') format('woff'),
-  url('iconfont.ttf?t=1503634059097') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  src: url('iconfont.eot?t=1503674018277'); /* IE9*/
+  src: url('iconfont.eot?t=1503674018277#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1503674018277') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1503674018277') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1503674018277#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
-  margin-top: 15px;
   font-family:"iconfont" !important;
-  font-size:40px;
+  font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.downMenu{
-  font-size:25px;
-}
+
+.icon-icon14:before { content: "\e620"; }
+
+.icon-add:before { content: "\e61f"; }
 
 .icon-right:before { content: "\e603"; }
 
@@ -25,7 +25,6 @@
 
 .icon-xiguan:before { content: "\e610"; }
 
-.icon-pengyouquan:before { content: "\e501"; }
-
+.icon-quanzi:before { content: "\e626"; }
 
 

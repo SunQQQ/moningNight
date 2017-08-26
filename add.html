@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>早睡早起</title>
+    <title>记习惯</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link href="css/index.css" rel="stylesheet" type="text/css">
     <link href="css/base.css" rel="stylesheet" type="text/css">
@@ -11,13 +11,15 @@
 <body>
 <div class="topbar">
     <a class="left" href="index.html">
-        <img src="pic/back.png">
+        <!--<i class="iconfont">&#xe620;</i>-->
     </a>
-    <div class="center">早睡早起</div>
-    <div class="right">
-        <img src="pic/selected.png">
-    </div>
+    <div class="center">圈子</div>
+    <a class="right" href="circle_add.html">
+        <i class="iconfont">&#xe61f;</i>
+    </a>
 </div>
+<div class="menu_hold"></div>
+
 <div class="timeInput">
     <div>时间：</div>
     <input type="datetime-local" class="moning-input">
@@ -40,7 +42,21 @@
     <div class="text">加载中</div>
 </div>
 
-
+<div class="menu">
+    <a class="item" href="index.html">
+        <i class="iconfont downMenu">&#xe610;</i>
+        <div >习惯</div>
+    </a>
+    <div class="item selected">
+        <i class="iconfont downMenu">&#xe618;</i>
+        <div>报表</div>
+    </div>
+    <div class="item">
+        <i class="iconfont downMenu">&#xe626;</i>
+        <div>圈子</div>
+    </div>
+</div>
+<div class="menu_hold"></div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/SQuery.js"></script>
 <script src="js/add.js"></script>

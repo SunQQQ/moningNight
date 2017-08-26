@@ -21,10 +21,16 @@ a{
 .topbar{
     display: flex;
     display: -webkit-flex;
-    background-color: #d84a3f;
-    padding: 8px 8px;
-    height: 20px;
+    background-color: #47bafe;
+    padding: 8px 3%;
+    height: 25px;
+    line-height: 25px;
     color: #ffffff;
+    position: fixed;
+    width: 94%;
+}
+.topbar a{
+    color:white;;
 }
 .topbar .left{
     width: 7%;
@@ -39,7 +45,8 @@ a{
     text-align: center;
 }
 .topbar .right{
-    width: 7%;
+    width: 14%;
+    text-align: right;
 }
 .topbar .right img{
     width: 100%;
@@ -89,5 +96,5 @@ a{
     color: #47bafe;
 }
 .menu_hold{
-    height: 60px;
+    height: 41px;
 }
