@@ -20,14 +20,40 @@
 </div>
 <div class="menu_hold"></div>
 <div class="addArea">
-    <textarea placeholder="说点什么吧..."></textarea>
+    <textarea placeholder="说点什么吧..." id="addText"></textarea>
     <div class="pics_button">
         <div class="camara">
             <i class="iconfont icon_camara">&#xe60e;</i>
         </div>
         <div class="hint">照片</div>
+        <form class="picform">
+            <input type="file" class="picInput"></input>
+        </form>
     </div>
 </div>
 
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    var addtext;
+    document.getElementsByClassName("right")[0].onclick = function () {
+        document.getElementsByClassName("picInput")[0].
+
+        addtext = document.getElementById("addText").value;
+        $.ajax(
+            {
+                data: {
+
+                },
+                type:"post",
+                ontentType: false,
+                processData: false,
+                success:function () {
+
+                }
+            }
+        );
+    }
+
+</script>
 </body>
 </html>
