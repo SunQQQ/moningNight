@@ -26,8 +26,9 @@
             <i class="iconfont icon_camara">&#xe60e;</i>
         </div>
         <div class="hint">照片</div>
-        <form class="picform">
-            <input type="file" class="picInput"></input>
+        <form class="picform" id="picform" enctype="multipart/form-data">
+            <input type="file" class="picInput" id="picInput">
+            <input type="text" class="s" id="s">
         </form>
     </div>
 </div>
@@ -36,19 +37,22 @@
 <script>
     var addtext;
     document.getElementsByClassName("right")[0].onclick = function () {
-        document.getElementsByClassName("picInput")[0].
-
+        console.log(document.getElementById("picform")[0].value);
+        var picData = document.getElementById("picform")[0].value;
+        console.log(picData);
         addtext = document.getElementById("addText").value;
         $.ajax(
             {
+                url:"http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php",
                 data: {
-
+                    picdata:picData
                 },
                 type:"post",
                 ontentType: false,
                 processData: false,
-                success:function () {
-
+                success:function (ret) {
+                    console.log("ajax成功");
+                    console.log(JSON.parse(ret));
                 }
             }
         );

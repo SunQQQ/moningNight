@@ -17,11 +17,12 @@ document.getElementsByClassName("right")[0].onclick = function () {
             moningOrNight:moningOrNight
         },
         success:function (data) {
+            console.log("jj");
            document.getElementsByClassName("working")[0].style.display = "none";
            document.getElementsByClassName("loading")[0].style.display = "block";
            setTimeout(function () {
-               location.href = "index.html";
-           },1000);
+               // location.href = "index.html";
+           },3000);
         }
     });
 }
