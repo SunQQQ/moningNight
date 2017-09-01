@@ -20,36 +20,36 @@
 </div>
 <div class="menu_hold"></div>
 <div class="addArea">
-    <textarea placeholder="说点什么吧..." id="addText"></textarea>
+    <textarea placeholder="说点什么吧..." id="addText" value="txt" name="txtInput"></textarea>
     <div class="pics_button">
         <div class="camara">
             <i class="iconfont icon_camara">&#xe60e;</i>
         </div>
         <div class="hint">照片</div>
-        <form class="picform" id="picform" enctype="multipart/form-data">
-            <input type="file" class="picInput" id="picInput">
-            <input type="text" class="s" id="s">
-        </form>
+            <input type="file" class="picInput" id="picInput" value="pic" name="picInput">
     </div>
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
-    var addtext;
     document.getElementsByClassName("right")[0].onclick = function () {
-        console.log(document.getElementById("picform")[0].value);
-        var picData = document.getElementById("picform")[0].value;
+        var picData = new FormData();
+        picData.append('picInput',"fs");
+        picData.append('txtInput',"jj");
         console.log(picData);
-        addtext = document.getElementById("addText").value;
+        console.log(document.getElementById("addText").value);
+
+//        var xhrForm = new XMLHttpRequest();
+//        xhrForm.open("POST", "http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php");
+//        xhrForm.send(picData);
+
         $.ajax(
             {
                 url:"http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php",
-                data: {
-                    picdata:picData
-                },
-                type:"post",
-                ontentType: false,
+                type:"POST",
                 processData: false,
+                contentType:false,
+                data:picData,
                 success:function (ret) {
                     console.log("ajax成功");
                     console.log(JSON.parse(ret));

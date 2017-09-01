@@ -1,11 +1,11 @@
 <?php
-$shuoshuoTxt = "测试";
-$pic = isset($_FILES["picdata"]["tmp_name"])? $_FILES["picdata"]["tmp_name"] : 'test';
+$pic = isset($_POST["picInput"])? $_POST["picInput"] : 'test';
+$shuoshuoTxt = $_POST["txtInput"];
 
-move_uploaded_file($pic,"../pic/shuoshuo/".$_FILES["picdata"]["name"]);
-if($_FILES["picdata"]["name"]){
-    $picUrl = "pic/shuoshuo/".$_FILES["picdata"]["name"];
-}
+//move_uploaded_file($pic,"../pic/shuoshuo/".$_FILES["picdata"]["name"]);
+//if($_FILES["picdata"]["name"]){
+//    $picUrl = "pic/shuoshuo/".$_FILES["picdata"]["name"];
+//}
 
 $connent = new mysqli("localhost","root","","moningnight");
 if($connent->connect_error){
