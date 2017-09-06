@@ -21,20 +21,27 @@
 <div class="menu_hold"></div>
 <div class="addArea">
     <textarea placeholder="说点什么吧..." id="addText" value="txt" name="txtInput"></textarea>
+
+    <div class="images"></div>
+
     <div class="pics_button">
         <div class="camara">
             <i class="iconfont icon_camara">&#xe60e;</i>
         </div>
         <div class="hint">照片</div>
-            <input type="file" class="picInput" id="picInput" value="pic" name="picInput">
+        <input type="file" class="picInput" onchange="imageUpload(this)" multiple="multiple">
     </div>
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
+    var images = document.getElementsByClassName("images")[0];
+//    var imgArray = [];
+    var imgArray;
+
     document.getElementsByClassName("right")[0].onclick = function () {
         var picData = new FormData();
-        picData.append('picInput',"fs");
+        picData.append('picInput',imgArray);
         picData.append('txtInput',"jj");
         console.log(picData);
         console.log(document.getElementById("addText").value);
@@ -52,12 +59,32 @@
                 data:picData,
                 success:function (ret) {
                     console.log("ajax成功");
-                    console.log(JSON.parse(ret));
+//                    console.log(JSON.parse(ret));
                 }
             }
         );
     }
-    console.log("测试git");
+
+    function imageUpload(file) {
+        for(var i=0,f;f=file.files[i];i++){
+            var fileRader = new FileReader();
+            fileRader.readAsDataURL(f);
+            fileRader.onload = function (event) {
+                drawPic(event.target.result);
+                console.log(event.target.result);
+//                imgArray.push(event.target.result);
+                imgArray = event.target.result;
+            }
+        }
+    }
+    function drawPic(url) {
+        var imageElement = document.createElement("img");
+        imageElement.src = url;
+        imageElement.style.width = 3 + "rem";
+        imageElement.style.height = 3 + "rem";
+        images.append(imageElement);
+    }
+
 </script>
 </body>
 </html>
