@@ -36,15 +36,12 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
     var images = document.getElementsByClassName("images")[0];
-//    var imgArray = [];
-    var imgArray;
+    var imgArray = [];
 
     document.getElementsByClassName("right")[0].onclick = function () {
         var picData = new FormData();
         picData.append('picInput',imgArray);
         picData.append('txtInput',"jj");
-        console.log(picData);
-        console.log(document.getElementById("addText").value);
 
 //        var xhrForm = new XMLHttpRequest();
 //        xhrForm.open("POST", "http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php");
@@ -71,11 +68,10 @@
             fileRader.readAsDataURL(f);
             fileRader.onload = function (event) {
                 drawPic(event.target.result);
-                console.log(event.target.result);
-//                imgArray.push(event.target.result);
-                imgArray = event.target.result;
+                imgArray.push(event.target.result);
             }
         }
+        console.log(imgArray);
     }
     function drawPic(url) {
         var imageElement = document.createElement("img");

@@ -1,40 +1,26 @@
 <?php
-if(isset($_POST["picInput"])){
-    $pic = base64_decode($_POST["picInput"]);
-}
 $shuoshuoTxt = $_POST["txtInput"];
+$baseArray = $_POST["picInput"];
+for($i=0;$i<count($baseArray);$i++){
+    //过滤base64字符串前缀，解码
+    $url = substr(strstr($baseArray[$i],','),1);
+    $pic = base64_decode($url);
 
-// 生成的文件名
-$photo = "2.jpg";
+    // 获取base64图片格式
+    if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $baseArray[$i], $result)){
+        $type = $result[2];
+    }
+    // 生成的文件名
+    $photo = '../pic/shuoshuo/'.randName().'.'.$type;
 
-// 生成文件
-file_put_contents($photo, $pic, true);
-
-//move_uploaded_file($pic,"../pic/shuoshuo/".$_FILES["picdata"]["name"]);
-//if($_FILES["picdata"]["name"]){
-//    $picUrl = "pic/shuoshuo/".$_FILES["picdata"]["name"];
-//}
-move_uploaded_file($photo,"../pic/shuoshuo/1.png");
-$picUrl = "pic/shuoshuo/1.png";
-
-$connent = new mysqli("localhost","root","","moningnight");
-if($connent->connect_error){
-    die("连接失败：".$connent->connect_error);
-}else{
+    // 生成文件
+    file_put_contents($photo, $pic);
 }
 
-$insertdata = "insert into shuoshuo(shuoshuo,pic) values('".$shuoshuoTxt."','".$picUrl."')";
-//$insertdata = "insert into shuoshuo(shuoshuo,pic) values('".$shuoshuoTxt."','".$pic."')";
-
-$json = [
-    "code" => "200",
-    "jsondata" => $pic
-];
-echo json_encode($json,JSON_UNESCAPED_UNICODE);
-if($connent->query($insertdata)==true){
-//    echo "<script>alert('定制成功，我们的老师将会及时与您联系')</script>";
-}else{
-    echo "Error insert data: " . $connent->error;
+//随机生成移动后的文件名
+function randName() {
+    $str = 'abcdefghijkmnpqrstwxyz23456789';
+    return substr(str_shuffle($str),0,4);
 }
-mysqli_close($connent);
+
 ?>
