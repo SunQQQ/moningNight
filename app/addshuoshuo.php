@@ -1,7 +1,8 @@
 <?php
 $shuoshuoTxt = $_POST["txtInput"];
+$baseArray = array();
 $baseArray = $_POST["picInput"];
-for($i=0;$i<count($baseArray);$i++){
+for($i=0;$i<2;$i++){
     //过滤base64字符串前缀，解码
     $url = substr(strstr($baseArray[$i],','),1);
     $pic = base64_decode($url);
