@@ -42,4 +42,5 @@
     outline: none;
     border: none;
     -webkit-appearance: none;
+    -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
 }
