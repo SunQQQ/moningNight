@@ -4,7 +4,7 @@
 document.getElementsByClassName("right")[0].onclick = function () {
     document.getElementsByClassName("working")[0].style.display = "block";
     var time = document.getElementsByClassName("moning-input")[0].value;
-    var moningOrNight = document.getElementsByClassName("moningSelect")[0].value;
+    var moningOrNight = document.getElementsByClassName("3")[0].value;
 
     var millsTime = new Date(time);
     var formatTime = SQ.FormatData(millsTime);

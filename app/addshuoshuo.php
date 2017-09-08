@@ -39,14 +39,9 @@ if($connent->query($insertdata)==true){
 }
 mysqli_close($connent);
 
-
-
-
-
 //随机生成移动后的文件名
 function randName() {
     $str = 'abcdefghijkmnpqrstwxyz23456789';
     return substr(str_shuffle($str),0,4);
 }
-
 ?>
