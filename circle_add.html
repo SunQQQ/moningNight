@@ -45,10 +45,6 @@
         picData.append('picInput',imgArray);
         picData.append('txtInput',document.getElementById("addText").value);
 
-//        var xhrForm = new XMLHttpRequest();
-//        xhrForm.open("POST", "http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php");
-//        xhrForm.send(picData);
-
         $.ajax(
             {
                 url:"http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php",
@@ -74,7 +70,6 @@
                 imgArray.push(event.target.result);
             }
         }
-        console.log(imgArray);
     }
     function drawPic(url) {
         var imageElement = document.createElement("img");
