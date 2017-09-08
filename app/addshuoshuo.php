@@ -15,7 +15,7 @@ for($i=0;$i<count($baseArray);$i++){
         // 生成文件
         file_put_contents($photo, $pic);
         //把php数组转成json
-        array_push($imgUrls,$photo);
+        array_push($imgUrls,substr($photo,3));
     }
 }
 //把存着多个图片地址字符串的数组转成json字符串，再往数据库里存
