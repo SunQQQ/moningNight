@@ -38,10 +38,12 @@
     var images = document.getElementsByClassName("images")[0];
     var imgArray = [];
 
+
     document.getElementsByClassName("right")[0].onclick = function () {
         var picData = new FormData();
+        imgArray = JSON.stringify(imgArray);
         picData.append('picInput',imgArray);
-        picData.append('txtInput',"jj");
+        picData.append('txtInput',document.getElementById("addText").value);
 
 //        var xhrForm = new XMLHttpRequest();
 //        xhrForm.open("POST", "http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php");
@@ -54,9 +56,10 @@
                 processData: false,
                 contentType:false,
                 data:picData,
+                datatype:"json",
                 success:function (ret) {
                     console.log("ajax成功");
-//                    console.log(JSON.parse(ret));
+                    console.log(JSON.parse(ret));
                 }
             }
         );
