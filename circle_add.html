@@ -30,7 +30,6 @@
             <input type="file" class="picInput" onchange="imageUpload(this)" multiple="multiple">
         </div>
     </div>
-
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -62,25 +61,37 @@
     }
 
     function imageUpload(file) {
+        var arrayIndex = 0;
         for(var i=0,f;f=file.files[i];i++){
             var fileRader = new FileReader();
             fileRader.readAsDataURL(f);
             fileRader.onload = function (event) {
-                drawPic(event.target.result);
+
+                drawPic(event.target.result,arrayIndex);
                 imgArray.push(event.target.result);
+                arrayIndex++;
             }
         }
     }
-    function drawPic(url) {
+    function drawPic(url,arrayIndex) {
+        /*动态生成div*/
+        var createImgDiv = document.createElement("div");
+        createImgDiv.className = "createImgDiv";
+        /*动态生成img*/
         var imageElement = document.createElement("img");
         imageElement.src = url;
-        imageElement.style.width = 6 + "rem";
-        imageElement.style.height = 6 + "rem";
-        imageElement.style.marginLeft = 0.5 + "rem";
-        imageElement.style.marginTop = 0.5 + "rem";
-        selectPics.prepend(imageElement);
-    }
+        /*动态生成取消按钮*/
+        var cancelButton = document.createElement("div");
+        cancelButton.className = "cancelButton";
 
+
+        /*img放在div中*/
+        createImgDiv.append(imageElement);
+        createImgDiv.append(cancelButton);
+
+        /*放着图片的div放在指定位置*/
+        selectPics.prepend(createImgDiv);
+    }
 </script>
 </body>
 </html>
