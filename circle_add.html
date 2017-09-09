@@ -66,23 +66,24 @@
             var fileRader = new FileReader();
             fileRader.readAsDataURL(f);
             fileRader.onload = function (event) {
-
-                drawPic(event.target.result,arrayIndex);
+                drawPic(event.target.result,arrayIndex,imgArray);
                 imgArray.push(event.target.result);
                 arrayIndex++;
             }
         }
     }
-    function drawPic(url,arrayIndex) {
+    function drawPic(url,arrayIndex,imgArray) {
         /*动态生成div*/
         var createImgDiv = document.createElement("div");
         createImgDiv.className = "createImgDiv";
+        createImgDiv.id = "createImgDiv" + arrayIndex;
         /*动态生成img*/
         var imageElement = document.createElement("img");
         imageElement.src = url;
         /*动态生成取消按钮*/
         var cancelButton = document.createElement("div");
         cancelButton.className = "cancelButton";
+        cancelButton.id = "cancelButton" + arrayIndex;
 
 
         /*img放在div中*/
@@ -91,6 +92,18 @@
 
         /*放着图片的div放在指定位置*/
         selectPics.prepend(createImgDiv);
+//        console.log(arrayIndex);
+
+        console.log(arrayIndex);
+        document.getElementById("cancelButton"+arrayIndex).onclick = function () {
+            document.getElementById("createImgDiv"+arrayIndex).style.display = "none";
+            imgArray.splice(arrayIndex,1);
+            console.log(imgArray);
+        };
+        /*循环中index会只取最终值
+        document.getElementsByClassName("cancelButton")[arrayIndex].onclick = function () {
+            console.log("j");
+        };*/
     }
 </script>
 </body>

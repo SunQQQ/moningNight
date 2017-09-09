@@ -70,9 +70,11 @@
     height: 100%;
 }
 .cancelButton{
-    width: 0.5rem;
-    height: 0.5rem;
-    background: url(../pic/cancel.png) center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(../pic/cancel.png) no-repeat;
+    background-position: center center;
+    background-size: 100%;
     position: absolute;
     right: 0;
     top: 0;
