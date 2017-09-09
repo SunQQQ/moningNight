@@ -21,21 +21,21 @@
 <div class="menu_hold"></div>
 <div class="addArea">
     <textarea placeholder="说点什么吧..." id="addText" value="txt" name="txtInput"></textarea>
-
-    <div class="images"></div>
-
-    <div class="pics_button">
-        <div class="camara">
-            <i class="iconfont icon_camara">&#xe60e;</i>
+    <div class="selectPics">
+        <div class="pics_button">
+            <div class="camara">
+                <i class="iconfont icon_camara">&#xe60e;</i>
+            </div>
+            <div class="hint">照片</div>
+            <input type="file" class="picInput" onchange="imageUpload(this)" multiple="multiple">
         </div>
-        <div class="hint">照片</div>
-        <input type="file" class="picInput" onchange="imageUpload(this)" multiple="multiple">
     </div>
+
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
-    var images = document.getElementsByClassName("images")[0];
+    var selectPics = document.getElementsByClassName("selectPics")[0];
     var imgArray = [];
 
 
@@ -74,9 +74,11 @@
     function drawPic(url) {
         var imageElement = document.createElement("img");
         imageElement.src = url;
-        imageElement.style.width = 3 + "rem";
-        imageElement.style.height = 3 + "rem";
-        images.append(imageElement);
+        imageElement.style.width = 6 + "rem";
+        imageElement.style.height = 6 + "rem";
+        imageElement.style.marginLeft = 0.5 + "rem";
+        imageElement.style.marginTop = 0.5 + "rem";
+        selectPics.prepend(imageElement);
     }
 
 </script>
