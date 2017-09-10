@@ -37,7 +37,6 @@
     var selectPics = document.getElementsByClassName("selectPics")[0];
     var imgArray = [];
 
-
     document.getElementsByClassName("right")[0].onclick = function () {
         var picData = new FormData();
         imgArray = JSON.stringify(imgArray);
@@ -60,18 +59,20 @@
         );
     }
 
+    /*当input发生改变时，触发此方法。遍历input选中的文件，将文件转成base64字符串存入数组。并将base64转成图片预览*/
     function imageUpload(file) {
         var arrayIndex = 0;
         for(var i=0,f;f=file.files[i];i++){
             var fileRader = new FileReader();
             fileRader.readAsDataURL(f);
             fileRader.onload = function (event) {
-                drawPic(event.target.result,arrayIndex,imgArray);
                 imgArray.push(event.target.result);
+                drawPic(event.target.result,arrayIndex,imgArray);
                 arrayIndex++;
             }
         }
     }
+    /*预览照片。动态生成放图片的div，以及取消图片的按钮。当点击取消时，删掉对应图片以及存base64字符串的数组对应的字符串*/
     function drawPic(url,arrayIndex,imgArray) {
         /*动态生成div*/
         var createImgDiv = document.createElement("div");
@@ -85,25 +86,20 @@
         cancelButton.className = "cancelButton";
         cancelButton.id = "cancelButton" + arrayIndex;
 
-
         /*img放在div中*/
         createImgDiv.append(imageElement);
         createImgDiv.append(cancelButton);
 
         /*放着图片的div放在指定位置*/
         selectPics.prepend(createImgDiv);
-//        console.log(arrayIndex);
 
-        console.log(arrayIndex);
         document.getElementById("cancelButton"+arrayIndex).onclick = function () {
             document.getElementById("createImgDiv"+arrayIndex).style.display = "none";
-            imgArray.splice(arrayIndex,1);
+            console.log(arrayIndex);
+//            imgArray.splice(arrayIndex,1);
+            delete imgArray[arrayIndex];
             console.log(imgArray);
         };
-        /*循环中index会只取最终值
-        document.getElementsByClassName("cancelButton")[arrayIndex].onclick = function () {
-            console.log("j");
-        };*/
     }
 </script>
 </body>
