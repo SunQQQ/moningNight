@@ -20,7 +20,7 @@
 </div>
 <div class="menu_hold"></div>
 <div class="addArea">
-    <textarea placeholder="说点什么吧..." id="addText" value="txt" name="txtInput"></textarea>
+    <textarea placeholder="说点什么吧..." id="addText" name="txtInput"></textarea>
     <div class="selectPics">
         <div class="pics_button">
             <div class="camara">
@@ -52,8 +52,7 @@
                 data:picData,
                 datatype:"json",
                 success:function (ret) {
-                    console.log("ajax成功");
-                    console.log(JSON.parse(ret));
+
                 }
             }
         );

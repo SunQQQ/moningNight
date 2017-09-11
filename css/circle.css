@@ -1,0 +1,58 @@
+.content{
+
+}
+.item{
+
+}
+.item .userInfo{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+}
+.item .userInfo .avator{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+}
+
+.item .userInfo .avator img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.item .userInfo .nameTime{
+
+}
+.item .userInfo .nameTime .topline{
+    font-size: 1.2rem;
+}
+.item .userInfo .nameTime .downline{
+    font-size: 0.9rem;
+    color: #7d8291;
+}
+.item .item_topnull{
+    height: 1rem;
+    background-color: #ebebec;
+}
+.item .shuoshuoText{
+    padding: 0 0.5rem;
+}
+.item .shuoshuo_pics{
+    padding: 0 0.5rem;
+    display: flex;
+    display: -webkit-flex;
+    margin-top: 0.5rem;
+}
+.item .shuoshuo_pics .imgdiv{
+    margin-right: 0.15rem;
+}
+.item .shuoshuo_pics .imgdiv:last-child{
+    margin-right: 0;
+}
+
+.item .shuoshuo_pics .imgdiv img{
+    width: 100%;
+    height: 100%;
+}
