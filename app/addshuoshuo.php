@@ -1,5 +1,6 @@
 <?php
 $shuoshuoTxt = $_POST["txtInput"];
+$username = '孙权';
 $baseArray = json_decode($_POST["picInput"]);
 $imgUrls = array();
 for($i=0;$i<count($baseArray);$i++){
@@ -27,7 +28,7 @@ if($connent->connect_error){
     die("连接失败：".$connent->connect_error);
 }else{
 }
-$insertdata = "insert into shuoshuo(shuoshuo,pic) values('".$shuoshuoTxt."','".$imgUrlsJson."')";
+$insertdata = "insert into shuoshuo(shuoshuo,pic,name) values('".$shuoshuoTxt."','".$imgUrlsJson."','".$username."')";
 if($connent->query($insertdata)==true){
     $json = [
         "code" => "200",

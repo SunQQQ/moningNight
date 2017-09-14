@@ -7,6 +7,8 @@
     <link href="css/base.css" rel="stylesheet" type="text/css">
     <link href="css/iconfont.css" rel="stylesheet" type="text/css">
     <link href="css/circle.css" rel="stylesheet" type="text/css">
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 
@@ -20,34 +22,27 @@
     </a>
 </div>
 <div class="topbar_null"></div>
-<div class="content">
-    <div class="item">
+<div class="content" id="content">
+    <div class="item" v-for="todo in jsondata">
         <div class="item_topnull"></div>
         <div class="userInfo">
             <div class="avator">
                 <img src="pic/avator.jpg">
             </div>
             <div class="nameTime">
-                <div class="topline">小名</div>
+                <div class="topline">{{todo.name}}</div>
                 <div class="downline">昨天 2017-15-02</div>
             </div>
         </div>
-        <div class="shuoshuoText">荷花快没了，荷叶倒不少</div>
+        <div class="shuoshuoText">{{todo.shuoshuo}}</div>
         <div class="shuoshuo_pics">
-            <div class="imgdiv">
-                <img src="./pic/avator.jpg">
-            </div>
-            <div class="imgdiv">
-                <img src="./pic/avator.jpg">
-            </div>
-            <div class="imgdiv">
-                <img src="./pic/avator.jpg">
-            </div>
-            <div class="imgdiv">
+            <div class="imgdiv" v-for="pic in todo.pic">
                 <img src="./pic/avator.jpg">
             </div>
         </div>
     </div>
+
+    <div class="menu_hold"></div>
 </div>
 
 <div class="menu">
@@ -64,5 +59,27 @@
         <div>圈子</div>
     </div>
 </div>
+
+<script>
+    var circleData;
+
+    $.ajax({
+        url:"http://localhost/proxy/sunq/moningNight/app/circle.php",
+        type:"post",
+        data:{
+            name:"孙权",
+        },
+        success:function (ret) {
+            circleData = JSON.parse(ret);
+
+
+            console.log(circleData);
+            var vm = new Vue({
+                el: '#content',
+                data: circleData
+            });
+        }
+    });
+</script>
 </body>
 </html>

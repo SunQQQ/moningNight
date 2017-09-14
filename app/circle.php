@@ -5,7 +5,7 @@ if($connent->connect_error){
     die("连接失败：".$connent->connect_error);
 }else{
 }
-$insertdata = "select * from shuoshuo";
+$sql = "select * from shuoshuo";
 $result = $connent->query($sql);
 
 $dataArray = array();
@@ -16,14 +16,10 @@ while ($rows=mysqli_fetch_array($result,MYSQL_ASSOC)){
     }
     array_push($dataArray,$rows);
 }
-
-if($connent->query($insertdata)==true){
     $json = [
         "code" => "200",
         "jsondata" => $dataArray
     ];
     echo json_encode($json,JSON_UNESCAPED_UNICODE);
-}else{
-    echo "Error insert data: " . $connent->error;
-}
+
 mysqli_close($connent);
