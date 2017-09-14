@@ -51,7 +51,7 @@
         picData.append('picInput',imgArray);
         picData.append('txtInput',document.getElementById("addText").value);
 
-        weui.toast("提交中");
+        var loading = weui.loading("提交中");
         $.ajax(
             {
                 url:"http://localhost/proxy/sunq/moningNight/app/addshuoshuo.php",
@@ -61,8 +61,11 @@
                 data:picData,
                 datatype:"json",
                 success:function (ret) {
-                    weui.toast("上传成功");
-
+                    loading.hide();
+                    weui.toast("发表成功");
+                    setTimeout(function () {
+                        location.href = "circle.html";
+                    },2000)
                 }
             }
         );
