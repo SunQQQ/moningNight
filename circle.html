@@ -37,7 +37,7 @@
         <div class="shuoshuoText">{{todo.shuoshuo}}</div>
         <div class="shuoshuo_pics">
             <div class="imgdiv" v-for="pic in todo.pic">
-                <img src="./pic/avator.jpg">
+                <img :src="pic">
             </div>
         </div>
     </div>
@@ -72,8 +72,17 @@
         success:function (ret) {
             circleData = JSON.parse(ret);
 
+            for(var i=0;i<circleData.jsondata.length;i++){
+                circleData.jsondata[i].pic = JSON.parse(circleData.jsondata[i].pic);
+                for(var a=0;a<circleData.jsondata[i].pic.length;a++){
+                    circleData.jsondata[i].pic[a] = "http://localhost/proxy/sunq/moningNight/"+circleData.jsondata[i].pic[a];
+                }
+            }
 
-            console.log(circleData);
+//            console.log(circleData.jsondata[]);
+//            var json = JSON.parse(circleData.jsondata[1].pic);
+//            console.log(json);
+            console.log(typeof json);
             var vm = new Vue({
                 el: '#content',
                 data: circleData
