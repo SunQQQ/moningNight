@@ -25,4 +25,6 @@ document.getElementsByClassName("right")[0].onclick = function () {
            },3000);
         }
     });
+
+
 }

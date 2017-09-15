@@ -3,7 +3,11 @@
     vertical-align: middle;
     padding: 10px 20px;
 }
-.timeInput selector{
+.timeInput select{
     flex: 1;
+    border: none;
+}
+input[type="datetime-local"]:before{
+    content:attr(placeholder);
 }
 

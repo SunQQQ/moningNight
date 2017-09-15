@@ -72,6 +72,7 @@
         success:function (ret) {
             circleData = JSON.parse(ret);
 
+            /*接收的后端照片数组是Json格式的，需要批量转化一下。数组里装的图片路径是不完整的，拼接完整。*/
             for(var i=0;i<circleData.jsondata.length;i++){
                 circleData.jsondata[i].pic = JSON.parse(circleData.jsondata[i].pic);
                 for(var a=0;a<circleData.jsondata[i].pic.length;a++){
@@ -79,9 +80,6 @@
                 }
             }
 
-//            console.log(circleData.jsondata[]);
-//            var json = JSON.parse(circleData.jsondata[1].pic);
-//            console.log(json);
             console.log(typeof json);
             var vm = new Vue({
                 el: '#content',

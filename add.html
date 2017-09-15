@@ -11,7 +11,7 @@
 <body>
 <div class="topbar">
     <a class="left" href="index.html">
-        <!--<i class="iconfont">&#xe620;</i>-->
+        <i class="iconfont">&#xe620;</i>
     </a>
     <div class="center">圈子</div>
     <a class="right">
@@ -21,14 +21,25 @@
 <div class="menu_hold"></div>
 
 <div class="timeInput">
+    <div>花费：</div>
+    <input type="number" class="moning-input" placeholder="0.0">
+</div>
+<div class="timeInput">
     <div>时间：</div>
-    <input type="datetime-local" class="moning-input">
+    <input type="datetime-local" class="moning-input" placeholder="选择时间">
 </div>
 <div class="timeInput">
     <div>事件：</div>
     <select class="moningSelect">
-        <option>起床</option>
-        <option>睡觉</option>
+        <option>餐饮</option>
+        <option>交通</option>
+        <option>购物</option>
+        <option>娱乐</option>
+        <option>医教</option>
+        <option>居家</option>
+        <option>投资</option>
+        <option>人情</option>
+        <option>生意</option>
     </select>
 </div>
 
@@ -43,20 +54,7 @@
     <div class="text">加载中</div>
 </div>
 
-<div class="menu">
-    <a class="item" href="index.html">
-        <i class="iconfont downMenu">&#xe610;</i>
-        <div >习惯</div>
-    </a>
-    <div class="item selected">
-        <i class="iconfont downMenu">&#xe618;</i>
-        <div>报表</div>
-    </div>
-    <div class="item">
-        <i class="iconfont downMenu">&#xe626;</i>
-        <div>圈子</div>
-    </div>
-</div>
+
 <div class="menu_hold"></div>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/SQuery.js"></script>
