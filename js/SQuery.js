@@ -19,5 +19,13 @@ var SQ = {
         }
 
         return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+    },
+    FormatData2:function (timer) {
+        var year = timer.getFullYear(),
+            // var year = 2017,
+            month = timer.getMonth() + 1,
+            date = timer.getDate()
+
+        return year + "-" + month + "-" + date;
     }
 };

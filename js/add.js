@@ -9,7 +9,8 @@ document.getElementsByClassName("right")[0].onclick = function () {
 
     var time = document.getElementsByClassName("moning-input")[0].value;
     var millsTime = new Date(time);
-    var formatTime = SQ.FormatData(millsTime);
+    var formatTime = SQ.FormatData2(millsTime);
+    console.log(formatTime);
 
     $.ajax({
         url:"http://localhost/proxy/sunq/moningNight/app/add.php",

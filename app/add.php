@@ -11,6 +11,16 @@ if($connent->connect_error){
 }
 
 $insertdata = "insert into time(name,time,moningnight,money) values('".$name."','".$time."','".$moningOrNight."','".$money."')";
+if($connent->query($insertdata)==true){
+    $json = [
+        "code" => "200",
+        "jsondata" => '添加成功'
+    ];
+    echo json_encode($imgUrlsJson,JSON_UNESCAPED_UNICODE);
+}else{
+    echo "Error insert data: " . $connent->error;
+}
+
 
 mysqli_close($connent);
 ?>
