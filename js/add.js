@@ -2,10 +2,12 @@
  * Created by OnlyMid on 2017/8/22.
  */
 document.getElementsByClassName("right")[0].onclick = function () {
-    document.getElementsByClassName("working")[0].style.display = "block";
-    var time = document.getElementsByClassName("moning-input")[0].value;
-    var moningOrNight = document.getElementsByClassName("3")[0].value;
+    var tijiao = weui.loading("提交中");
 
+    var activity = document.getElementsByClassName("activity")[0].value;
+    var money = document.getElementsByClassName("money")[0].value;
+
+    var time = document.getElementsByClassName("moning-input")[0].value;
     var millsTime = new Date(time);
     var formatTime = SQ.FormatData(millsTime);
 
@@ -14,17 +16,15 @@ document.getElementsByClassName("right")[0].onclick = function () {
         type:"post",
         data:{
             time:formatTime,
-            moningOrNight:moningOrNight
+            money:money,
+            activity:activity
         },
         success:function (data) {
-            console.log("jj");
-           document.getElementsByClassName("working")[0].style.display = "none";
-           document.getElementsByClassName("loading")[0].style.display = "block";
+           console.log("jj");
+           tijiao.hide();
            setTimeout(function () {
                // location.href = "index.html";
            },3000);
         }
     });
-
-
 }

@@ -1,6 +1,7 @@
 <?php
 $time = $_POST["time"];
-$moningOrNight = $_POST["moningOrNight"];
+$money = $_POST["money"];
+$moningOrNight = $_POST["activity"];
 $name = "孙权";
 
 $connent = new mysqli("localhost","root","","moningnight");
@@ -9,12 +10,7 @@ if($connent->connect_error){
 }else{
 }
 
-$insertdata = "insert into time(name,time,moningnight) values('".$name."','".$time."','".$moningOrNight."')";
+$insertdata = "insert into time(name,time,moningnight,money) values('".$name."','".$time."','".$moningOrNight."','".$money."')";
 
-if($connent->query($insertdata)==true){
-    echo "<script>alert('定制成功，我们的老师将会及时与您联系')</script>";
-}else{
-    echo "Error insert data: " . $connent->error;
-}
 mysqli_close($connent);
 ?>
